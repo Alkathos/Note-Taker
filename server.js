@@ -4,23 +4,11 @@ const fs = require("fs");
 const server = new express();
 
 server.get("/", (req, res) => {
-    fs.readFile(`${__dirname}/public/index.html`, "utf-8", (err, html) => {
-        if (err) {
-            console.log(err);
-        } else {
-            res.send(html);
-        }
-    })
+    res.sendFile(`${__dirname}/public/index.html`)
 })
 
 server.get("/notes", (req, res) => {
-    fs.readFile(`${__dirname}/public/notes.html`, "utf-8", (err, html) => {
-        if (err) {
-            console.log(err);
-        } else {
-            res.send(html);
-        }
-    })
+    res.sendFile(`${__dirname}/public/notes.html`)
 })
 
 server.listen(3000, () => {
