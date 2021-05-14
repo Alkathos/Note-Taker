@@ -1,16 +1,14 @@
 const express = require("express");
+const server = express();
 const fs = require("fs");
+const PORT = process.env.PORT || 3000;
 
-const server = new express();
+server.get("/:page", (req, res) => {
+    res.sendFile(`${__dirname}/public/${req.params.page}.html`);  
+});
 
-server.get("/", (req, res) => {
-    res.sendFile(`${__dirname}/public/index.html`)
-})
 
-server.get("/notes", (req, res) => {
-    res.sendFile(`${__dirname}/public/notes.html`)
-})
 
-server.listen(3000, () => {
-    console.log("Server is up and running on port 3000.")
+server.listen(PORT, () => {
+    console.log(`Server is up and running on port ${PORT}.`)
 });
