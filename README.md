@@ -11,7 +11,7 @@ This was made to create a simple solution for note taking while on the move. It 
 - [Questions](#questions)
 
 ## Installation
-No installation needed, just a web browser. If you are working using VSCode, see below  
+No installation needed, just a web browser. If you are working using node.js, see below  
 
 ```bash
 npm install express
