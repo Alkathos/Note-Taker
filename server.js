@@ -2,7 +2,9 @@
 const express = require("express");
 const path = require("path");
 const notes = require("../Note-Taker/db/db.json");
-console.log(notes);
+const { v4: uuidv4 } = require ("uuid");
+
+//console.log(notes);
 
 //-------------------------------------------------------------Set up server----------------------------------------------------------
 const server = express();
@@ -28,9 +30,16 @@ server.get("*", (req, res) => res.sendFile(path.join(__dirname, '/public/index.h
 
 //-------------------------------------------------------------------Push Notes to Server--------------------------------------------------------
 server.post('/api/notes', (req, res) => {
+    const newNote = req.body;
+    
+    newNote.id = uuidv4();
+    console.log(newNote);
     notes.push(req.body);
     res.json(true);
 });
+
+//-------------------------------------------------------------------Delete Notes from Server--------------------------------------------------------
+//server.delete("/api/notes/:id")
 
 //-----------------------------------------------------------Open server for listening------------------------------------------------
 server.listen(PORT, () => {
