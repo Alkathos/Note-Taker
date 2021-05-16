@@ -1,13 +1,15 @@
 # Note Taker 
 
 ## Description
-This was made to create a simple solution for note taking while on the move. It can store your notes and delete them as you wish.
+This was made to create a simple solution for note taking while on the move. It can store your notes and **delete them as you wish** <--This functionality is not working.  
+You may try out the app here: https://github.com/RyanEllingson/Note-Taker/blob/master/server.js
 
 
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
+- [Future](#future)
 - [Questions](#questions)
 
 ## Installation
@@ -15,6 +17,11 @@ No installation needed, just a web browser. If you are working using node.js, se
 
 ```bash
 npm install express
+```  
+Also added an npm package to generate a unique id  
+
+```bash
+npm install uuid
 ```
 
 ## Usage
@@ -24,6 +31,8 @@ There is an initial webpage that appears and that button that is available will 
 ## Credits
 Credit to whoever made the initial files to use and help bring everything together.
 
+## Future
+Will be adding a delete function later.
 
 ## Questions
 If you want to collaborate with me in future projects or want to better this repo. You can contact me via email f.zaldivar@live.com and you can see my other works at GitHub. My username is alkathos, enjoy!
