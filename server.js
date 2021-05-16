@@ -60,8 +60,23 @@ server.get("/api/notes/:id", (req, res) => {
 
 //-------------------------------------------------------------------Delete Notes from Server--------------------------------------------------------
 server.delete("/api/notes/:id"), (req, res) => {
-    const deletedNote = req.params.id;
+    //1. read file
+    //2. grab the note id
+    //3. loop through notes to find id
+    //4. remove note
+    //5. rewrite the json file
+    // fs.readFile(path.join(__dirname, '/db/db.json'), "utf8", (err, resp) => {
+    //     if (err) {
+    //         console.log(err);
+    //     }
+    //     const notes = JSON.parse(resp);
+    //     console.log(notes);
+    //     const delNoteId = notes.id;
+    //     notes.filter(!delNoteId);
+    //     console.log(notes);
+    //     notes.push(notes);
 
+    // })
 };
 
 //-----------------------------------------------------------Open server for listening------------------------------------------------
