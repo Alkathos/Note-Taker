@@ -31,7 +31,7 @@ server.get("*", (req, res) => res.sendFile(path.join(__dirname, '/public/index.h
 
 //-------------------------------------------------------------------Push Notes to Server and add the ID--------------------------------------------------------
 server.post('/api/notes', (req, res) => {
-    //got post code from previous student
+    //got post code from (https://github.com/RyanEllingson/Note-Taker/blob/master/server.js)
     fs.readFile(path.join(__dirname, '/db/db.json'), "utf8", (err, resp) => {
         if (err) {
             console.log(err);
