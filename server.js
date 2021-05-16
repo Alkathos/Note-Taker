@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const notes = require("../Note-Taker/db/db.json");
 const { v4: uuidv4 } = require ("uuid");
+const fs = require ("fs");
 
 //console.log(notes);
 
@@ -23,7 +24,6 @@ server.get("/api/notes", (req, res) => res.json(notes));
 //--------------------------------------------------------Displays the Note------------------------------------------------------
 server.get("/api/notes/:id", (req, res) => {
     const selectedNote = req.params.id;
-    console.log(selectedNote);
     res.json(selectedNote);
 });
 
@@ -49,10 +49,9 @@ server.post('/api/notes', (req, res) => {
 server.delete("/api/notes/:id"), (req, res) => {
     const deletedNote = req.params.id;
 
-    
-}
+};
 
 //-----------------------------------------------------------Open server for listening------------------------------------------------
 server.listen(PORT, () => {
-    console.log(`Server is up and running on port ${PORT}.`)
+    console.log(`Server is up and running on port ${PORT}.`);
 });
