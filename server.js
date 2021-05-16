@@ -20,6 +20,13 @@ server.use('/public', express.static('public'));
 //--------------------------------------------------------Displays the JSON file------------------------------------------------------
 server.get("/api/notes", (req, res) => res.json(notes));
 
+//--------------------------------------------------------Displays the Note------------------------------------------------------
+server.get("/api/notes/:id", (req, res) => {
+    const selectedNote = req.params.id;
+    console.log(selectedNote);
+    res.json(selectedNote);
+});
+
 //---------------------------------------------------------------Basic Routing--------------------------------------------------------
 server.get("/", (req, res) => res.sendFile(path.join(__dirname, '/public/index.html')));
 
@@ -28,7 +35,7 @@ server.get("/notes", (req, res) => res.sendFile(path.join(__dirname, '/public/no
 //-------------------------------------------------------------------Catch all--------------------------------------------------------
 server.get("*", (req, res) => res.sendFile(path.join(__dirname, '/public/index.html')));
 
-//-------------------------------------------------------------------Push Notes to Server--------------------------------------------------------
+//-------------------------------------------------------------------Push Notes to Server and add the ID--------------------------------------------------------
 server.post('/api/notes', (req, res) => {
     const newNote = req.body;
     
@@ -39,7 +46,11 @@ server.post('/api/notes', (req, res) => {
 });
 
 //-------------------------------------------------------------------Delete Notes from Server--------------------------------------------------------
-//server.delete("/api/notes/:id")
+server.delete("/api/notes/:id"), (req, res) => {
+    const deletedNote = req.params.id;
+
+    
+}
 
 //-----------------------------------------------------------Open server for listening------------------------------------------------
 server.listen(PORT, () => {
