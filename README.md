@@ -2,7 +2,7 @@
 
 ## Description
 This was made to create a simple solution for note taking while on the move. It can store your notes and **delete them as you wish** <--This functionality is not working.  
-You may try out the app here: https://github.com/RyanEllingson/Note-Taker/blob/master/server.js
+You may try out the app here:
 
 
 ## Table of Contents
